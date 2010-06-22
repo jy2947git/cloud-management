@@ -1,0 +1,6 @@
+
+jdbc.labName=${databasename}
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://${host}/${databasename}
+jdbc.username=${databasename}
+jdbc.password=${databasepassword}

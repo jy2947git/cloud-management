@@ -1,0 +1,8 @@
+
+set storage_engine = InnoDB;
+create database ${databasename};
+use ${databasename};
+grant ALL PRIVILEGES ON ${databasename}.* to ${databasename}@'${host}' IDENTIFIED by '${databasepassword}';
+flush privileges;
+
+

@@ -1,0 +1,32 @@
+#
+# this python project contains python scripts for bime application
+# ClientListener - listen to RabbitMQ (AMQP) and add or remove client (lab)
+# HaproxyListener - listen to RabbitMQ (AMQP) and add or remove routing of lab-server
+# EC2 status reporter - send metadata to RabbitMQ every minute
+#
+# They reply on below external Python modules
+# amqp-lib
+# simplejson
+wget http://py-amqplib.googlecode.com/files/amqplib-0.6.1.tgz
+tar zxvf amqplib-0.6.1.tgz
+cd amqplib-0.6.1
+sudo python setup.py install
+#
+#
+#
+wget http://pypi.python.org/packages/source/s/simplejson/simplejson-2.1.1.tar.gz#md5=0bbe3a2e5e4cac040013733aca159d89
+tar zxvf simplejson-2.1.1.tar.gz
+cd  simplejson-2.1.1
+sudo python setup.py install
+
+#
+# to build distribution
+# make sure the setup.py has all the modules
+# cd src
+# rm MANIFEST
+# python setup.py bdist
+
+#
+# to install distribution
+# unpack the gz file
+# python setup.py install
