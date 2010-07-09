@@ -34,8 +34,8 @@ class DataSourceUtils(object):
                 archiveName=config_dir+"/"+databaseName+"."+str(time.time())+".cancelled"
                 os.rename(config_dir+"/"+databaseName, archiveName)
                 print 'found directory already exists:' + databaseName + " renamed existing one to" + archiveName
-            
-            os.mkdir(config_dir+"/"+databaseName)
+            else:
+                os.mkdir(config_dir+"/"+databaseName)
             #create the sql files for this specific client
             self.create_create_database_sql(config_dir, host, databaseName, databasepassword, templateDir+"/"+"createDatabase.template");
             self.create_drop_database_sql(config_dir, host, databaseName, databasepassword, templateDir+"/"+"dropDatabase.template");
@@ -60,33 +60,33 @@ class DataSourceUtils(object):
         #create jdbc.properties in configuration directory
         print 'creating jdbc.properties'
         mc = focaplo.files.file.FileUtils()
-        mc.write_with_template(config_dir+"/"+databaseName+"/jdbc.properties", template,databasename=databaseName,host=host,databasepassword=password)
+        mc.write_with_template(config_dir+"/jdbc.properties", template,databasename=databaseName,host=host,databasepassword=password)
         print 'done'
         
     def create_drop_database_sql(self,config_dir, host,databaseName,databasepassword,template):
         print 'creating dropDatabase.sql'
         mc = focaplo.files.file.FileUtils()
-        mc.write_with_template(config_dir+"/"+databaseName+"/dropDatabase.sql", template,databasename=databaseName,host=host,databasepassword=databasepassword)
+        mc.write_with_template(config_dir+"/dropDatabase.sql", template,databasename=databaseName,host=host,databasepassword=databasepassword)
 
         print 'done'
         
     def create_create_database_sql(self,config_dir,host,databaseName,databasepassword,template):
         print 'creating createDatabase.sql'
         mc = focaplo.files.file.FileUtils()
-        mc.write_with_template(config_dir+"/"+databaseName+"/createDatabase.sql", template,databasename=databaseName,databasepassword=databasepassword,host=host)
+        mc.write_with_template(config_dir+"/createDatabase.sql", template,databasename=databaseName,databasepassword=databasepassword,host=host)
         print 'done'
         
     def create_auto_increment_sql(self,config_dir, databaseName, autoid, template):
         print 'creating auto_increment.sql'
         mc = focaplo.files.file.FileUtils()
-        mc.write_with_template(config_dir+"/"+databaseName+"/auto_increment.sql", template,databasename=databaseName,autoid=autoid)
+        mc.write_with_template(config_dir+"/auto_increment.sql", template,databasename=databaseName,autoid=autoid)
 
         print 'done'
     
     def create_initialize_lab_sql(self,config_dir, databaseName, autoid, adminemail, adminfullname, adminencryptedpassword,template):
         print 'creating initialize_lab.sql'
         mc = focaplo.files.file.FileUtils()
-        mc.write_with_template(config_dir+"/"+databaseName+"/initialize_lab.sql", template,databasename=databaseName,autoid=autoid,adminemail=adminemail,adminfullname=adminfullname,adminencryptedpassword=adminencryptedpassword)
+        mc.write_with_template(config_dir+"/initialize_lab.sql", template,databasename=databaseName,autoid=autoid,adminemail=adminemail,adminfullname=adminfullname,adminencryptedpassword=adminencryptedpassword)
 
         print 'done'
         

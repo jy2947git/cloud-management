@@ -29,7 +29,7 @@ class ClientListener(Listener):
             res="unsupported command:" + jobj["command"]
         print 'message processed'
         #return json with incoming and output
-        return json.dumps({"incoming":s,"result":res})
+        return json.dump({"incoming":s,"result":res})
 
             
     def __callback_update_client__(self,msg):

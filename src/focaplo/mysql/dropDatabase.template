@@ -1,7 +1,0 @@
-drop database if exists ${databasename};
-grant usage on *.* to ${databasename}@'${host}';
-drop user ${databasename}@'${host}';
-flush privileges;
-
-
-

@@ -20,10 +20,11 @@ cd  simplejson-2.1.1
 sudo python setup.py install
 
 #
-# to build distribution
+# to build source and binary distribution
 # make sure the setup.py has all the modules
 # cd src
 # rm MANIFEST
+# python setup.py sdist
 # python setup.py bdist
 
 #

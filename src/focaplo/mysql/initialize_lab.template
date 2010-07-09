@@ -1,5 +1,0 @@
-
-use ${databasename};
-INSERT INTO `app_user` (created_date,last_update_date,version,account_expired,account_locked,cellPhoneNumber,credentials_expired,email,account_enabled,first_name,homePhoneNumber,last_name,password,password_hint,startDate,superUserId,title,username,workPhoneNumber) VALUES (null,null,0,0,0,null,0,'${adminemail}',1,'${adminfullname}',null,'','${adminencryptedpassword}','standard',null,null,'administrator of lab','admin',null);
-INSERT INTO `user_role` (user_id,role_id) VALUES (${autoid},'ROLE_ADMIN');
-INSERT INTO `lab` (name,storageIdentity) VALUES('${databasename}','${databasename}.bimelab.com');
